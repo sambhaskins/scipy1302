@@ -2,6 +2,7 @@
 #File: Proj01Rnner.txt
 
 import math
+import Proj01Runner as proj
 #You may not import any libraries other than math
 '''
 The following is a Python class named mean that calculates the mean 
@@ -33,28 +34,37 @@ class mean:
               "Sam Haskins")
 
     def calculate(self):
-        mean = sum
-# Insert code to calculate and return the mean of the dataset.
-
+        mean = sum(self.dataset) / len(self.dataset)
+        return mean
+    
 class median:
     def __init__(self, dataset):
         self.dataset = dataset
 
     def calculate(self):
-# Insert code to calculate and return the median of the dataset.
+        sorted_nums = sorted(self.dataset)
+        length = len(sorted_nums)
+        mid = length // 2
 
-class stdev:
-    def __init__(self, dataset):
-        self.dataset = dataset
+        if length % 2 == 1:
+            median = sorted_nums[mid]
+        else: 
+            median = ((sorted_nums[mid - 1] + sorted_nums[mid]) / 2)
 
-    def calculate(self):
-# Insert code to calculate and return the sample standard deviation
-# of the dataset.
+        return median
+    
+# class stdev:
+#     def __init__(self, dataset):
+#         self.dataset = dataset
 
-class pstdev:
-    def __init__(self, dataset):
-        self.dataset = dataset
+#     def calculate(self):
+# # Insert code to calculate and return the sample standard deviation
+# # of the dataset.
 
-    def calculate(self):
-# Insert code to calculate and return the population standard 
-# deviation of the dataset.
+# class pstdev:
+#     def __init__(self, dataset):
+#         self.dataset = dataset
+
+#     def calculate(self):
+# # Insert code to calculate and return the population standard 
+# # deviation of the dataset.
