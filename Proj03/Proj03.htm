@@ -1,0 +1,204 @@
+<!--
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>ITSE 1302</title>
+<style type="text/css">
+a:link {color:#0000ff;}
+a:visited {color:#cc00cc;}
+a:active {color:#ff0000;}
+a:hover {color: #cc0000;font-weight: bold;text-decoration: none;}
+
+pre {color: navy;}
+p{color:teal;}
+h1{color:green}
+h2{color: purple}
+h3{color: gray}
+b{color: #000000}
+strong{color: #000000}
+blockquote{color: purple}
+ul{color: maroon}
+ol{color: maroon}
+table{border: 1px solid black}
+th{border: 1px solid black}
+body{
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 12pt;
+	background-color: #FEFFF0;}
+.auto-style1 {
+	text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+<center>
+<h2>ITSE 1302 </h2>
+</center>
+
+<center>
+<h2 style="text-align: center;">Project 03</h2>
+<h2 style="text-align: center;">Statistics </h2>
+</center>
+<p>File Proj03.htm</p>
+<p>Revised 04/24/23</p>
+
+<p>R. G. Baldwin instructor<br/>
+ </p>
+
+<center>
+<h2>Read The Instructions Carefully</h2>
+</center>
+
+<p>A detailed set of instructions is provided in a separate document titled <strong>Instructions for Downloading and Submitting Assignments </strong> that you can
+view in the orientation material for this course.</p>
+<p>I recommend that you study those instructions <strong>very carefully</strong> 
+and make yourself a checklist to ensure that you meet all of the 
+requirements before submitting your project.</p>
+<p>Failure to follow the instructions to the letter usually results in a
+failing grade, normally zero. The general instructions in that document apply
+to this project. In addition, this document provides specific
+instructions for the project. </p>
+
+<p>If you have any questions regarding instructions, please ask them at least
+one week prior to the assignment deadline. Don't end up with a bad grade due to the
+fact that you didn't understand the instructions. </p>
+
+
+
+<center>
+<h2>Typographical Errors</h2>
+</center>
+<p>If you discover any typographical errors in this document, please let me know
+so that I can correct the error and notify all of the students.</p>
+<h2 class="auto-style1">Source Code</h2>
+
+<p>You will find a driver source code file named <strong>Proj03.py</strong> 
+in the same zip file from which you extracted this project specification.</p>
+<h2 class="auto-style1">Python Version Requirements</h2>
+<p>Python is somewhat version sensitive, particularly between version 2.x and 
+version 3.x. Your project will be graded using Python version 3.6.2 or a later version.</p>
+<h2 class="auto-style1">Specific Project Requirements</h2>
+<p>Specific project requirements follow:</p>
+<table border="2" cellpadding="10">
+  <tbody>
+    <tr>
+      <td><p>Proj03 Copyright 2017 R.G.Baldwin</p>
+<p>Among other things, this project requires that you write a program that 
+demonstrates your knowledge of:</p>
+<ul>
+	<li>Relationships between variables as illustrated using a scatter plot</li>
+
+	<li>Best-fit line on a scatter plot</li>
+	<li>Standard normal probability density function</li>
+	<li>Range from minus three sigma to plus three sigma</li>
+	<li>Relative frequency histogram</li>
+	<li>Positively and negatively skewed distributions</li>
+	<li>Cumulative distribution function of the standard normal probability density function</li>
+
+
+
+
+</ul>
+	  <p>Before going any further, you should make certain that you have read the 
+	  prescribed material in the Ebook. You can identify that material by 
+	  selecting <strong>Asg03</strong> in the Bb menu and then selecting <strong>
+	  MLO-1.3 Objectives, Read, and Do</strong>. If you don't understand 
+	  something in that material, you should ask your instructor for 
+	  clarification.</p>
+	  <p>Also see the lesson titled <em>Histogram Plotting Preview</em> in the 
+	  Ebook.</p>
+<h2>PROGRAM SPECIFICATIONS</h2>
+		<p>Write and submit a Python module named <strong>Proj03Runner.py</strong> that works in 
+		conjunction with the driver source code contained 
+		in the file named <strong>Proj03.py</strong> to produce the output 
+		illustrated by <a href="#Figure_1">Figure 1</a> and <a href="#Figure_2">
+		Figure 2</a> below.</p>
+	  <p>Be sure that your name appears in the certification as indicated and 
+	  also at 
+	  the top of the output image as indicated.</p>
+	  <p>The program must terminate and return control to the operating system 
+	  when the user dismisses the image by clicking the X-button on the image 
+	  window.</p>
+	  <p>Do not copy the code from the file named <strong>Proj03.py</strong> into your file named 
+	  <strong>Proj03Runner.py</strong>.</p>
+		<p>You may not modify the code in the file named <strong>Proj03.py</strong>. Your instructor will execute the 
+		code in his original version of the file named <strong>Proj03.py</strong> in the same 
+		folder as your file named <strong>Proj03Runner.py</strong> for the purpose of grading your assignment. 
+		If you modify the code in your file named <strong>Proj03.py</strong>, it is unlikely that 
+		your program will run successfully when tested.</p>
+	  <h3>Specifications for the output image</h3>
+	  <p>The output image must be a single image containing an independent 
+	  display in each of four quadrants as shown in <a href="#Figure_1">Figure 1</a>.</p>
+	  <p><strong>Scatter plot</strong></p>
+	  <p>The upper-left quadrant must display a noisy relationship between two 
+	  random variables exhibiting a positive correlation similar to that shown 
+	  in <a href="#Figure_1">Figure 1</a>. Create and plot approximately 100 data pairs and draw the 
+	  best fit line as shown.</p>
+	  <p><strong>Standard normal probability density function</strong></p>
+	  <p>Plot the standard normal probability density function from minus three sigma to plus three sigma in the 
+	  upper-right quadrant as shown in <a href="#Figure_1">Figure 1</a>.This 
+	  must be an exact copy of (not just similar to) that shown in <a href="#Figure_1">Figure 1</a>.</p>
+	  <p><strong>Histogram for positively skewed data</strong></p>
+	  <p>The lower-left quadrant must display a relative frequency histogram for 
+	  data with a positively skewed distribution similar to that shown in <a href="#Figure_1">Figure 1</a>. 
+	  Use a random number generator to create the data being plotted in the 
+	  histogram. Cause the data values to range from zero to 2000 and cause your 
+	  histogram to have 50 bins. Generate enough data to ensure that the 
+	  histogram is relatively smooth with no gaps indicating empty bins.</p>
+	  <p><strong>Cumulative distribution function of the standard normal 
+	  probability density function</strong></p>
+	  <p>Plot the cumulative distribution function of the standard normal 
+	  probability density function from minus three sigma to plus three sigma in the 
+	  lower-right quadrant as shown in <a href="#Figure_1">Figure 1</a>. This 
+	  must be an exact copy of (not just similar to) that shown in <a href="#Figure_1">Figure 1</a>.</p>
+	  <p><strong>Template files</strong></p>
+	  <p>To help you get started, the zip file from which you downloaded this 
+	  file also contains two files named <strong>Proj.py</strong> and <strong>ProjRunner.py</strong>. 
+	  Executing the file named <strong>Proj.py</strong> should produce the 
+	  output shown in <a href="#Figure_3">Figure 3</a>. You can use 
+	  the file named <strong>ProjRunner.py</strong> as a template 
+	  for your file named <strong>Proj03Runner.py</strong>.</p>
+	  <h3>Specifications for output on command-line screen</h3>
+	  <p>The command-line screen output from your program must display the 
+	  certification shown in <a href="#Figure_2">Figure 2</a>.</p>
+	  <p>IMPORTANT NOTE: The <strong>normed</strong> parameter has been removed 
+	  from the <strong>hist</strong> method in later versions of pyplot. <strong>
+	  Don't use "normed=True". Use "density=True" instead.</strong></p>
+<p>IMPORTANT NOTE: On this and future assignments, your system/code may or may 
+not put interactive controls on the bottom of the output image as shown in
+<a href="#Figure_1">Figure 1</a>. That doesn't matter. Interactive controls are 
+not a requirement of the assignments.</p>
+
+</td>
+    </tr>
+  </tbody>
+</table>
+<p>&nbsp;</p>
+
+<table border="20" width="1"><thead><tr><th>
+<a name="Figure_1">Figure 1.</a> Required output from Proj03
+</th></tr></thead><tbody><tr><td style="height: 553px">
+		<img alt="missing image" height="547" src="stat02-1.jpg" width="649"/></td></tr></tbody></table>
+<p>&nbsp;</p>
+<table border="20" width="1"><thead><tr><th>
+<a name="Figure_2">Figure 2.</a> Required output from Proj03.
+</th></tr></thead><tbody><tr><td>
+		<img alt="missing image" height="106" src="stat02-2.jpg" width="444"/></td></tr></tbody></table>
+
+<p>&nbsp;</p>
+<table border="20" width="1"><thead><tr><th>
+<p><a name="Figure_3">Figure 3.</a> Template</p>
+</th></tr></thead><tbody><tr><td style="height: 553px">
+		<img alt="Missing image" height="480" src="proj.png" width="640"/></td></tr></tbody></table>
+
+<p>-end-
+ </p>
+
+</body>
+</html>

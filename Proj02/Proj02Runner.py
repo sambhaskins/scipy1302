@@ -4,10 +4,8 @@ class Runner:
               "and is not the work of others. I agree not\n" +
               "to share my solution with others.\n" +
               "Sam Haskins")
+        freq = {}
+        for i in data:
+            freq[i] = freq.get(i, 0) + 1
 
-        frequency = {}
-
-        for item in data:
-            frequency[item] = frequency.get(item, 0) + 1
-            
-        return list(frequency.values())
+        return list(freq.values())
