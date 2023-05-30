@@ -1,30 +1,8 @@
 
-#File: Proj01Rnner.txt
 
 import math
-import Proj01Runner as proj
-#You may not import any libraries other than math
-'''
-The following is a Python class named mean that calculates the mean 
-of a dataset.
 
-The class has two methods:
 
-    __init__(self, dataset): This is the constructor method. It is called 
-    when an object of this class is created. It takes one parameter, 
-    'dataset', which is the data that the mean will be calculated from. 
-    It assigns this dataset to the instance variable self.dataset.
-
-    calculate(self): This method calculates the mean of the dataset. 
-    It takes no parameters, but it uses the dataset that was passed to 
-    the constructor and stored in self.dataset. The result is the mean 
-    of the dataset and returned.
-
-This class is used in the driver script in the file named Proj01.py, 
-where m = mean(random_dataset) creates an object of the class 
-and m.calculate() calls the calculate method on the object, 
-returning the mean of the dataset.
-'''
 class mean:
     def __init__(self, dataset):
         self.dataset = dataset
@@ -35,8 +13,10 @@ class mean:
 
     def calculate(self):
         mean = sum(self.dataset) / len(self.dataset)
+
         return mean
-    
+
+
 class median:
     def __init__(self, dataset):
         self.dataset = dataset
@@ -48,23 +28,32 @@ class median:
 
         if length % 2 == 1:
             median = sorted_nums[mid]
-        else: 
+        else:
             median = ((sorted_nums[mid - 1] + sorted_nums[mid]) / 2)
 
         return median
-    
-# class stdev:
-#     def __init__(self, dataset):
-#         self.dataset = dataset
 
-#     def calculate(self):
-# # Insert code to calculate and return the sample standard deviation
-# # of the dataset.
 
-# class pstdev:
-#     def __init__(self, dataset):
-#         self.dataset = dataset
+class stdev:
+    def __init__(self, dataset):
+        self.dataset = dataset
 
-#     def calculate(self):
-# # Insert code to calculate and return the population standard 
-# # deviation of the dataset.
+    def calculate(self):
+        mean = sum(self.dataset) / len(self.dataset)
+        square_diff_sum = sum((x - mean) ** 2 for x in self.dataset)
+        variance = square_diff_sum / (len(self.dataset) - 1)
+        stdev = math.sqrt(variance)
+
+        return stdev
+
+class pstdev:
+    def __init__(self, dataset):
+        self.dataset = dataset
+
+    def calculate(self):
+        mean = sum(self.dataset) / len(self.dataset)
+        square_diff_sum = sum((x - mean) ** 2 for x in self.dataset)
+        variance = square_diff_sum / (len(self.dataset))
+        pstdev = math.sqrt(variance)
+
+        return pstdev
