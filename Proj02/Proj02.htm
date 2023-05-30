@@ -1,0 +1,263 @@
+<!--
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>ITSE 1302</title>
+<style type="text/css">
+a:link {color:#0000ff;}
+a:visited {color:#cc00cc;}
+a:active {color:#ff0000;}
+a:hover {color: #cc0000;font-weight: bold;text-decoration: none;}
+
+pre {color: navy;}
+p{color:teal;}
+h1{color:green}
+h2{color: purple}
+h3{color: gray}
+b{color: #000000}
+strong{color: #000000}
+blockquote{color: purple}
+ul{color: maroon}
+ol{color: maroon}
+table{border: 1px solid black}
+th{border: 1px solid black}
+body{
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 12pt;
+	background-color: #FEFFF0;}
+.auto-style1 {
+	text-align: center;
+}
+.auto-style2 {
+	border: 1px solid #000000;
+}
+</style>
+</head>
+
+<body>
+
+<center>
+<h2>ITSE 1302</h2>
+</center>
+
+<center>
+<h2 style="text-align: center;">Project 02</h2>
+<h2 style="text-align: center;">Statistics </h2>
+</center>
+<p>File Proj02.htm</p>
+<p>Revised 04/24/23</p>
+
+<p>R. G. Baldwin instructor<br/>
+ </p>
+
+<center>
+<h2>Read The Instructions Carefully</h2>
+</center>
+
+<p>A detailed set of instructions is provided in a separate document titled <strong>Instructions for Downloading and Submitting Assignments </strong> that you can
+view in the orientation material for this course.</p>
+<p>I recommend that you study those instructions <strong>very carefully</strong> 
+and make yourself a checklist to ensure that you meet all of the 
+requirements before submitting your project.</p>
+<p>Failure to follow the instructions to the letter usually results in a
+failing grade, normally zero. The general instructions in that document apply
+to this project. In addition, this document provides specific
+instructions for the project. </p>
+
+<p>If you have any questions regarding instructions, please ask them at least
+one week prior to the assignment deadline. Don't end up with a bad grade due to the
+fact that you didn't understand the instructions. </p>
+
+
+
+<center>
+<h2>Typographical Errors</h2>
+</center>
+<p>If you discover any typographical errors in this document, please let me know
+so that I can correct the error and notify all of the students.</p>
+<h2 class="auto-style1">Source Code</h2>
+
+<p>You will find a driver source code file named <strong>Proj02.py</strong> 
+in the same zip file from which you extracted this project specification.</p>
+<h2 class="auto-style1">Python Version Requirements</h2>
+<p>Python is somewhat version sensitive, particularly between version 2.x and 
+version 3.x. Your project will be graded using Python version 3.6.2 or a later version.</p>
+<h2 class="auto-style1">Specific Project Requirements</h2>
+<p>Specific project requirements follow:</p>
+<table border="2" cellpadding="10">
+  <tbody>
+    <tr>
+      <td><p>Proj02 Copyright 2022 R.G.Baldwin</p>
+<p>Among other things, this project requires you to 
+demonstrate a basic knowledge of frequency 
+distributions and histograms. In this project you will write Python code to create 
+the data for a frequency
+distribution chart that emulates a histogram for a
+given dataset. You will write that code without importing any libraries. </p>
+	  <p>Before going any further, you should make certain that you have read 
+	  the prescribed material in the Ebook. You can identify that material by 
+	  selecting <strong>Asg02</strong> in the Bb menu and then selecting <strong>
+	  MLO-1.2 Objectives, Read, and Do</strong>. If you don't understand 
+	  something in that material, you should ask your instructor for 
+	  clarification.<em>
+	  </em>
+	  </p>
+
+	  <p>PROGRAM SPECIFICATIONS</p>
+		<p>Write and submit a Python module named <strong>Proj02Runner.py</strong> that works in 
+		conjunction with the driver source code contained 
+		in the file named <strong>Proj02.py</strong> to produce the output 
+		illustrated by <a href="#Figure_1">Figure 1</a>, <a href="#Figure_2">
+		Figure 2</a>, and <a href="#Figure_3">Figure 3</a> below on the command-line screen.</p>
+	  <p>Be sure that your name appears in the certification as indicated.</p>
+	  <p>The code that you&nbsp;write must not import anything.</p>
+	  <p>The program must terminate and return control to the operating system 
+	  when control reaches the end of the file named <strong>Proj02.py</strong>. 
+	  In other words, infinite loops are not allowed.</p>
+	  <p>Do not copy the code from the file named <strong>Proj02.py</strong> into your file named 
+	  <strong>Proj02Runner.py</strong>.</p>
+		<p>You must not modify the code in the file named <strong>Proj02.py</strong>. Your instructor will execute the 
+		code in his original version of the file named <strong>Proj02.py</strong> in the same 
+		folder as your file named <strong>Proj02Runner.py</strong> for the purpose of grading your assignment. 
+		If you modify the code in your copy of the file named <strong>Proj02.py</strong>, it is unlikely that 
+		your program will run successfully when tested.</p>
+	  <p>The required output depends on three command-line arguments that are 
+	  entered when the 
+	  program is run. The command-line arguments are used to create a dataset. Three sample outputs with different command-line arguments are shown below. 
+	  You can use those sample outputs to test 
+	  your program. </p>
+	  <p>Your instructor will use a different set of command-line arguments 
+	  than any of the three shown below to create a dataset and grade your program. Your code must be 
+	  able accommodate a different dataset regardless of the number and/or 
+	  range of values in the dataset. </p>
+	  <p>You should begin by analyzing the code in the file named <strong>
+	  Proj02.py</strong>. In particular, analyze the construction of the dataset 
+	  in the list 
+	  named <strong>data</strong> to get an idea of what you will be working 
+	  with. That list, which is shown at the top of each sample below, will be passed to your function named <strong>run</strong> 
+	  in a class named <strong>Runner</strong> in a file named <strong>
+	  Proj02Runner.py</strong>. Before writing any code, you should try to 
+	  replicate the charts shown below with pencil and paper using the dataset shown at 
+	  the top of each sample. Once you can do that, you should be able to 
+	  convert that process into code.</p>
+	  <p>Your challenge is to process that incoming dataset in such a way as to 
+	  return a list which, when processed by the code in the file named <strong>
+	  Proj02.py</strong>, will create a frequency distribution chart that 
+	  emulates a histogram.</p>
+	  <p></p>
+	  <table class="auto-style2" style="width: 100%">
+		  <tr>
+			  <td>Figure 1. Required output from Proj02 Sample 1.
+
+<pre>
+The dataset is:
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 
+7, 8, 9, 2, 3, 4, 5, 6, 7, 8, 3, 4, 5, 6, 7, 4, 5, 6, 5]
+Your code may not import anything.
+The command-line arguments are:  ['Proj02.py', '6,10,0']
+
+Execute student code.
+I certify that this program is my own work
+and is not the work of others. I agree not
+to share my solution with others.
+Print your name here.
+
+Display data returned by student code.
+                x
+             x  x  x
+          x  x  x  x  x
+       x  x  x  x  x  x  x
+    x  x  x  x  x  x  x  x  x
+ x  x  x  x  x  x  x  x  x  x  x
+---------------------------------
+[1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1]
+</pre>
+			  </td>
+		  </tr>
+	  </table>
+	  <p>.</p>
+	  <table class="auto-style2" style="width: 100%">
+		  <tr>
+			  <td>
+			  <p>Figure 2. Required output from Proj02 Sample 2. 			  </p>
+<pre>
+The dataset is:
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 
+8, 9, 2, 3, 4, 5, 6, 7, 8, 3, 4, 5, 6, 7, 4, 5, 6, 5, 
+6, 7, 8, 9, 6, 7, 8, 9, 6, 7, 8, 9, 6, 7, 8, 9]
+Your code may not import anything.
+The command-line arguments are:  ['Proj02.py', '6,10,4']
+
+Execute student code.
+I certify that this program is my own work
+and is not the work of others. I agree not
+to share my solution with others.
+Print your name here.
+
+Display data returned by student code.
+                   x
+                   x  x
+                   x  x  x
+                x  x  x  x  x
+             x  x  x  x  x  x
+          x  x  x  x  x  x  x
+       x  x  x  x  x  x  x  x
+    x  x  x  x  x  x  x  x  x
+ x  x  x  x  x  x  x  x  x  x  x
+---------------------------------
+[1, 2, 3, 4, 5, 6, 9, 8, 7, 6, 1]
+</pre>
+			  </td>
+		  </tr>
+	  </table>
+	  <p>.</p>
+	  <table class="auto-style2" style="width: 100%">
+		  <tr>
+			  <td>
+			  <p>Figure 3. Required output from Proj02 Sample 3. </p>
+<pre>
+The dataset is:
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 
+8, 9, 2, 3, 4, 5, 6, 7, 8, 3, 4, 5, 6, 7, 4, 5, 6, 5, 
+3, 4, 5, 6, 7, 3, 4, 5, 6, 7, 3, 4, 5, 6, 7]
+Your code may not import anything.
+The command-line arguments are:  ['Proj02.py', '3,8,3']
+
+Execute student code.
+I certify that this program is my own work
+and is not the work of others. I agree not
+to share my solution with others.
+Print your name here.
+
+Display data returned by student code.
+                x
+             x  x  x
+          x  x  x  x  x
+          x  x  x  x  x
+          x  x  x  x  x
+          x  x  x  x  x
+       x  x  x  x  x  x  x
+    x  x  x  x  x  x  x  x  x
+ x  x  x  x  x  x  x  x  x  x  x
+---------------------------------
+[1, 2, 3, 7, 8, 9, 8, 7, 3, 2, 1]
+</pre>
+			  </td>
+		  </tr>
+	  </table>
+
+</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<p>-end-
+ </p>
+
+</body>
+</html>
