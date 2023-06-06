@@ -1,3 +1,8 @@
+import numpy as np
+import random
+import matplotlib.pyplot as plt
+import math
+
 def normalRandomGenerator(seed=1,dataLength=10000,numberSamples=50,lowLim=0,highLim=100):
 
     '''Create a new dataset of dataLength values consisting of the average of numberSamples 
