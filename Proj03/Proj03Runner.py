@@ -3,10 +3,10 @@ import random
 import matplotlib.pyplot as plt
 import math
 
-def normalRandomGenerator(seed=1,dataLength=10000,numberSamples=50,lowLim=0,highLim=100):
 
-    '''Create a new dataset of dataLength values consisting of the average of numberSamples 
-    samples taken from a population of uniformly distributed values between lowLim 
+def normalRandomGenerator(seed=1, dataLength=10000, numberSamples=50, lowLim=0, highLim=100):
+    """Create a new dataset of dataLength values consisting of the average of numberSamples
+    samples taken from a population of uniformly distributed values between lowLim
     and highLim generated with a seed of seed.
 
     Input keyword parameters and their default values:
@@ -18,8 +18,7 @@ def normalRandomGenerator(seed=1,dataLength=10000,numberSamples=50,lowLim=0,high
     lowLim = 0 lower limit value of the uniformly distributed population
     highLim = 100 high limit value of the uniformly distributed population
 
-    returns: a list containing the dataset'''
-
+    returns: a list containing the dataset"""
 
     xData = []
     random.seed(seed)
@@ -27,7 +26,7 @@ def normalRandomGenerator(seed=1,dataLength=10000,numberSamples=50,lowLim=0,high
     for cnt in range(dataLength):
         theSum = 0
         for cnt1 in range(numberSamples):
-            theSum += random.uniform(lowLim,highLim)
-        xData.append(theSum/numberSamples)
-        
+            theSum += random.uniform(lowLim, highLim)
+        xData.append(theSum / numberSamples)
+
     return xData
