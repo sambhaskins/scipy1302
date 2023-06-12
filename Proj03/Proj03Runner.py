@@ -1,65 +1,80 @@
-import numpy as np
 import random
+import numpy as np
 import matplotlib.pyplot as plt
 
 
 def normalRandomGenerator(seed=1, dataLength=10000, numberSamples=50, lowLim=0, highLim=100):
-    dataset = []
+
+    data = []
     random.seed(seed)
 
-    for nums in range(dataLength):
-        samples = [random.uniform(lowLim, highLim) for _ in range(numberSamples)]
-        avg = sum(samples) / numberSamples
-        dataset.append(avg)
+    for cnt in range(dataLength):
+        theSum = 0
+        for cnt1 in range(numberSamples):
+            theSum += random.uniform(lowLim, highLim)
+            data.append(theSum / numberSamples)
 
-    return dataset
-
-
-print("I certify this program is my own work and is not the work of others.")
-print("I agree not to share my solution with others.")
-print("Sam Haskins")
+    return data
 
 
-class Runner():
+def lmsBestFitLine(xDataIn, yDataIn):
+    xBar = np.mean(xDataIn)
+    yBar = np.mean(yDataIn)
+
+    numerator = np.sum((xDataIn - xBar) * (yDataIn - yBar))
+    denominator = np.sum((xDataIn - xBar) ** 2)
+
+    m = numerator / denominator
+    b = yBar - m * xBar
+
+    return m, b
+
+
+class Runner:
     def run():
         # Create a figure with two rows and two columns.
         fig, ax = plt.subplots(2, 2)
 
-        # Create a dataset
-        data = normalRandomGenerator(
-            dataLength=10001,
-            numberSamples=4,
-            lowLim=0,
-            highLim=400)
+        xData = normalRandomGenerator(seed=1, dataLength=100, numberSamples=1, lowLim=0, highLim=150)
+        noise = normalRandomGenerator(seed=2, dataLength=200, numberSamples=1, lowLim=0, highLim=10)
 
-        # Plot histogram in upper left quadrant
-        ax[0, 0].hist(data, bins=50, density=True)
+        yData = []
+        for cnt in range(len(xData)):
+            yData.append(xData[cnt] / 10 + noise[cnt])
+
+        # Compute and draw the best fit line
+        m, b = lmsBestFitLine(xData, yData)
+
+        # Draw a best fit line
+        x1 = min(xData)
+        y1 = m * x1 + b
+        x2 = max(xData)
+        y2 = m * x2 + b
+        ax[0, 0].plot([x1, x2], [y1, y2])
+        ax[0, 0].scatter(xData, yData, c='red', s=50, edgecolor='blue')
         ax[0, 0].grid(True)
-        ax[0, 0].set_title('Histogram')
 
         # Plot a box plot in lower left quadrant
-        ax[1, 0].boxplot(data, vert=False)
+        ax[1, 0].boxplot(xData, vert=False)
         ax[1, 0].grid(True)
-        ax[1, 0].set_title('Box Plot')
 
         # Plot a violin plot in the upper right quadrant
-        ax[0, 1].violinplot(data, vert=False, positions=[0.5])
+        ax[0, 1].violinplot(xData, vert=False, positions=[0.5])
         ax[0, 1].grid(True)
-        ax[0, 1].set_title('Violin Plot')
 
         # Plot a flipped histogram in the lower right quadrant
-        mean = np.mean(data)
-        centered_data = data - mean
+        mean = np.mean(xData)
+        centered_data = xData - mean
         flipped_data = -centered_data
         flipped_data += mean
         ax[1, 1].hist(flipped_data, bins=50, density=True)
         ax[1, 1].grid(True)
-        ax[1, 1].set_title('Flipped Histogram')
 
         # Add title to the figure and show it
-        plt.suptitle('Sam Beers Haskins')
+        fig.suptitle('Sam Beers Haskins')
         plt.tight_layout()
         plt.show()
 
-    # end run function
-# end class Runner
+
+# Run the code
+Runner.run()
