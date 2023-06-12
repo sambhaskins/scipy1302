@@ -1,8 +1,6 @@
 import random
-from statistics import stdev, mean
 import numpy as np
 import matplotlib.pyplot as plt
-import math
 
 
 def normal_random_generator(seed=1, data_length=10000, number_samples=50, low_lim=0, high_lim=100):
@@ -21,15 +19,13 @@ def normal_random_generator(seed=1, data_length=10000, number_samples=50, low_li
     return data
 
 
-def other_data(seed, data_length, number_samples, low_lim, high_lim):
+def other_data():
     """
     generates additional, positively skewed data using a uniform distribution
     """
-    np.random.seed(seed)
-    new_data = np.random.uniform(low=low_lim, high=high_lim, size=(data_length, number_samples))
-    new_avg = np.mean(new_data, axis=1)
-    new_skew = np.sqrt(new_avg)
-    return new_skew.tolist()
+    new_data = np.random.gamma(8, scale=100, size=5000)
+    data = new_data * 2000 / np.max(new_data)
+    return data
 
 
 def lms_best_fit_line(x_data_in, y_data_in):
@@ -55,7 +51,7 @@ def standard_normal_distribution(x):
     e_val = 2.718281828459045
     exp = (-x ** 2) / 2
     numerator = pow(e_val, exp)
-    denominator = math.sqrt(2 * math.pi)
+    denominator = np.sqrt(2 * np.pi)
     return numerator / denominator
 
 
@@ -66,7 +62,7 @@ def normal_probability_density(x, mu=0, sigma=1.0):
     e_val = 2.718281828459045
     exp = -((x - mu) ** 2) / (2 * (sigma ** 2))
     numerator = pow(e_val, exp)
-    denominator = sigma * (math.sqrt(2 * math.pi))
+    denominator = sigma * (np.sqrt(2 * np.pi))
     return numerator / denominator
 
 
@@ -84,12 +80,17 @@ def cumulative_distribution(x):
     sign = 1
     if x < 0:
         sign = -1
-    x = abs(x) / math.sqrt(2.0)
+    x = abs(x) / np.sqrt(2.0)
 
     t = 1.0 / (1.0 + p * x)
-    y = 1.0 - (((((a5 * t + a4) * t) + a3) * t + a2) * t + a1) * t * math.exp(-x * x)
+    y = 1.0 - (((((a5 * t + a4) * t) + a3) * t + a2) * t + a1) * t * np.exp(-x * x)
 
     return 0.5 * (1.0 + sign * y)
+
+
+print("I certify that this program is my own work and not the work of others")
+print("I agree not to share my solution with others")
+print("Sam Beers Haskins")
 
 
 class Runner:
@@ -126,7 +127,7 @@ class Runner:
         ax[0, 1].grid(True)
 
         # plot in the lower left quadrant, using positively skewed data
-        data = other_data(seed=1, data_length=2000, number_samples=20, low_lim=0, high_lim=2500)
+        data = other_data()
         ax[1, 0].hist(data, bins=50)
         ax[1, 0].grid(True)
 
@@ -136,6 +137,6 @@ class Runner:
         # plot in the lower right quadrant
         ax[1, 1].plot(x, y)
 
-        fig.suptitle('sam beers haskins')
+        fig.suptitle('Sam Beers Haskins')
         plt.tight_layout()
         plt.show()
