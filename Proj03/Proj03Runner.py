@@ -1,10 +1,10 @@
 import random
 import numpy as np
 import matplotlib.pyplot as plt
+import math
 
 
 def normalRandomGenerator(seed=1, dataLength=10000, numberSamples=50, lowLim=0, highLim=100):
-
     data = []
     random.seed(seed)
 
@@ -30,22 +30,28 @@ def lmsBestFitLine(xDataIn, yDataIn):
     return m, b
 
 
+def standardNormalDistribution(x):
+    eVal = 2.718281828459045
+    exp = (-x ** 2) / 2
+    numerator = pow(eVal, exp)
+    denominator = math.sqrt(2 * math.pi)
+    return numerator / denominator
+
+
 class Runner:
     def run():
         # Create a figure with two rows and two columns.
         fig, ax = plt.subplots(2, 2)
 
-        xData = normalRandomGenerator(seed=1, dataLength=100, numberSamples=1, lowLim=0, highLim=150)
+        xData = normalRandomGenerator(seed=1, dataLength=100, numberSamples=1, lowLim=0, highLim=200)
         noise = normalRandomGenerator(seed=2, dataLength=200, numberSamples=1, lowLim=0, highLim=10)
 
         yData = []
         for cnt in range(len(xData)):
             yData.append(xData[cnt] / 10 + noise[cnt])
 
-        # Compute and draw the best fit line
         m, b = lmsBestFitLine(xData, yData)
 
-        # Draw a best fit line
         x1 = min(xData)
         y1 = m * x1 + b
         x2 = max(xData)
@@ -58,8 +64,14 @@ class Runner:
         ax[1, 0].boxplot(xData, vert=False)
         ax[1, 0].grid(True)
 
-        # Plot a violin plot in the upper right quadrant
-        ax[0, 1].violinplot(xData, vert=False, positions=[0.5])
+        # Create an array of uniformly spaced values
+        x = np.arange(-3, 3, 0.1)
+        # Create a list containing a distribution value for each value in x
+        # using list comprehension.
+        y = [standardNormalDistribution(val) for val in x]
+
+        # Use matplotlib to plot the data.
+        ax[0, 1].plot(x, y)
         ax[0, 1].grid(True)
 
         # Plot a flipped histogram in the lower right quadrant
@@ -75,6 +87,6 @@ class Runner:
         plt.tight_layout()
         plt.show()
 
-
-# Run the code
-Runner.run()
+        print("I certify that this program is my own work and is not the work of others.")
+        print("I agree not to share my solution with others.")
+        print("Sam Beers Haskins")
