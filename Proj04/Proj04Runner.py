@@ -5,7 +5,6 @@ from matplotlib.ticker import FormatStrFormatter
 
 
 class Runner:
-    @staticmethod
     def run(data01, data02, data03, data04):
         # Create a 2x2 figure containing four plots with shaorange x and y tick marks and labels.
         fig, ax = plt.subplots(2, 2, sharey=True, sharex=True)
@@ -22,11 +21,14 @@ class Runner:
         x = np.linspace(min(data01), max(data01), 100)
         y = (1 / (data_std * np.sqrt(2 * np.pi))) * \
             np.exp(-(x - data_mean)**2 / (2 * data_std**2))
-        ax[0, 0].plot(x, y, color='orange')
+        line, = ax[0, 0].plot(x, y, color='orange', marker='.', markevery=10)
+        ax[0, 0].legend([line], ['norm prob density'], loc='upper left')
         ax[0, 0].grid(True)
         ax[0, 0].set_title('Upper Left')
         ax[0, 0].set_ylabel('Relative Frequency')
         ax[0, 0].yaxis.set_major_formatter(FormatStrFormatter('%.3f'))
+
+
 
         # Plot data02
         cnt, bins, _ = ax[0, 1].hist(
@@ -40,10 +42,13 @@ class Runner:
         x = np.linspace(min(data02), max(data02), 100)
         y = (1 / (data_std * np.sqrt(2 * np.pi))) * \
             np.exp(-(x - data_mean)**2 / (2 * data_std**2))
+        line, = ax[0, 1].plot(x, y, color='orange', marker='.', markevery=5)
+        ax[0, 1].legend([line], ['norm prob density'], loc='upper left')
         ax[0, 1].plot(x, y, color='orange')
         ax[0, 1].grid(True)
         ax[0, 1].set_title('Upper Right')
         ax[0, 1].yaxis.set_major_formatter(FormatStrFormatter('%.3f'))
+
 
         # Plot data03
         cnt, bins, _ = ax[1, 0].hist(
@@ -57,12 +62,14 @@ class Runner:
         x = np.linspace(min(data03), max(data03), 100)
         y = (1 / (data_std * np.sqrt(2 * np.pi))) * \
             np.exp(-(x - data_mean)**2 / (2 * data_std**2))
-        ax[1, 0].plot(x, y, color='orange')
+        line, = ax[1, 0].plot(x, y, color='orange', marker='.', markevery=3)
+        ax[1, 0].legend([line], ['norm prob density'], loc='upper left')
         ax[1, 0].grid(True)
         ax[1, 0].set_title('Lower Left')
-        ax[1, 0].set_xlabel('X-Value')
+        ax[1, 0].set_xlabel('x')
         ax[1, 0].set_ylabel('Relative Frequency')
         ax[1, 0].yaxis.set_major_formatter(FormatStrFormatter('%.3f'))
+
 
         # Plot data04
         cnt, bins, _ = ax[1, 1].hist(
@@ -76,11 +83,13 @@ class Runner:
         x = np.linspace(min(data04), max(data04), 100)
         y = (1 / (data_std * np.sqrt(2 * np.pi))) * \
             np.exp(-(x - data_mean)**2 / (2 * data_std**2))
-        ax[1, 1].plot(x, y, color='orange')
+        line, = ax[1, 1].plot(x, y, color='orange', marker='.', markevery=2)
+        ax[1, 1].legend([line], ['norm prob density'], loc='lower left')
         ax[1, 1].grid(True)
         ax[1, 1].set_title('Lower Right')
-        ax[1, 1].set_xlabel('X-Value')
+        ax[1, 1].set_xlabel('x')
         ax[1, 1].yaxis.set_major_formatter(FormatStrFormatter('%.3f'))
+
 
         # Display the number of bins in all histograms
         num_bins = len(bins) - 1
