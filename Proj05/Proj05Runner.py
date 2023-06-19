@@ -1,7 +1,6 @@
 import statistics
 import matplotlib.pyplot as plt
 
-
 class Runner:
     @staticmethod
     def run(data01):
@@ -14,7 +13,7 @@ class Runner:
         MIN = min(data01)
         MAX = max(data01)
 
-        data02 = data01[:len(data01) // 2]
+        data02 = [x - statistics.mean(data01) for x in data01]
         data03 = data02[::-1]
         data04 = [x * 0.75 for x in data01]
 
@@ -58,5 +57,5 @@ class Runner:
         for axs in ax.flat:
             axs.set_xticks(range(-100, 101, 100))
 
-        return (Q1, Q2, Q3, IQR, LOL, UOL, MIN, MAX, ax, data02,
-                data03, data04)
+        return (Q1,Q2,Q3,IQR,LOL,UOL,MIN,MAX,ax,data02,\
+  data03,data04)
