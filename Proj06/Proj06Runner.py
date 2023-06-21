@@ -19,9 +19,11 @@ class Runner:
         ax0, ax1, ax2, ax3 = axes.flatten()
 
         ax0.plot(t, np.sin(5 * t))
+        ax0.set_title('A Sine')
         ax1.plot(t, np.exp(-t) * np.cos(4 * np.pi * t))
+        ax1.set_title('A damped cosine')
         ax2.plot(t, 1.0 - np.exp(-t))
-
+        ax2.set_title('An inverse exponential')
         ax3.plot(t, np.exp(-t) * np.cos(4 * np.pi * t), label='Damped cosine')
         ax3.plot(t, np.cos(4 * np.pi * t), label='Cosine')
         ax3.legend(loc='upper right', framealpha=0.3, facecolor='Green')
