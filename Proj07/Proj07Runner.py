@@ -46,7 +46,6 @@ class Runner:
         ax2.xaxis.set_ticks_position('bottom')
         ax2.yaxis.set_ticks_position('left')
         ax2.text(1, 8, '$y=-x^3$')
-        ax2.legend()
 
         # 0.5 * t^2 plot
         ax3.plot(t, 0.5 * t**2)
@@ -58,7 +57,6 @@ class Runner:
         ax3.yaxis.set_ticks_position('left')
         ax3.text(0.25, 3.5, '$y=0.5*x^2$')
         ax3.set_ylim(-4.5,4.5)
-        ax3.legend()
 
         # Improve the layout
         plt.figtext(0.1,0.02,'Sam Beers Haskins')
