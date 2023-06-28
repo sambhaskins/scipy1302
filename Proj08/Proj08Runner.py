@@ -7,7 +7,7 @@ class Runner:
         fig.patch.set_edgecolor('black')  # Set the edge color
         fig.patch.set_linewidth(3)  # Set the line width
 
-        t = np.arange(0, 6.0, 0.11)
+        t = np.arange(0, 6.0, 0.08)
 
         # Damped Sine
         damped_sine = np.exp(-t/2) * np.sin(np.pi*t)
