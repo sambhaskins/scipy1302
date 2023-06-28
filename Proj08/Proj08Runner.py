@@ -1,26 +1,37 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
+"""
+This code will display a single plot with three different mathematical functions: a Damped Sine, an Exponential,
+and a Sine function. The plot features custom annotations and a legend for each function, as well as a custom grid.
+"""
+
 class Runner:
     def run():
+        # Certification
+        print("I certify that this program is my own work and not the work of others")
+        print("I agree not to share my solution with others")
+        print("Sam Beers Haskins")
+
+        # Setup single subplot with specific dimensions and edge styles
         fig, ax0 = plt.subplots(1, 1, facecolor='0.75')
         fig.patch.set_edgecolor('black')  # Set the edge color
         fig.patch.set_linewidth(3)  # Set the line width
 
+        # Create a range of t values for the plots
         t = np.arange(0, 6.0, 0.08)
 
-        # Damped Sine
+        # Plot Damped Sine function
         damped_sine = np.exp(-t/2) * np.sin(np.pi*t)
         ax0.plot(t, damped_sine, 'go', label='Damped Sine')
 
-        # Exponential, adjusted to skirt along the top of the damped sine
+        # Plot Exponential function, adjusted to skirt along the top of the damped sine
         exponential = np.exp(-t/2)
         ax0.plot(t, exponential, 'r-', label='Exponential')
 
-        # Sine
+        # Plot Sine function
         sine = np.sin(np.pi*t)
-        ax0.plot(t, sine, 'b-', label='Sine')  # Draw line
-        ax0.plot(t, sine, 'b+')  # Add vertical ticks
+        ax0.plot(t, sine, 'b-+', label='Sine')  # Draw line
 
         ax0.legend(loc='lower right', framealpha=0.3, facecolor='Green')
         ax0.set_ylabel('Sam')
@@ -47,5 +58,5 @@ class Runner:
                     textcoords='offset points', arrowprops=dict(arrowstyle="->",
                     connectionstyle="arc3,rad=0.2"))
 
+        # Render plot & display my name in bottom left corner.
         plt.show()
-
