@@ -3,20 +3,13 @@ import matplotlib.pyplot as plt
 from statistics import mean, stdev
 
 """
-This program visualizes two sets of data across six different subplots, with various 
-visualization types including histograms and boxplots. Customizations are applied 
-to each subplot based on the data it represents. 
+This program visualizes two sets of data across six different subplots, using histograms and box & whisker plots. 
+Customizations are applied to each subplot based on the data it represents, and according to assignment specs. 
 """
 
 class Runner:
     @staticmethod
     def run(g04, g05):
-        """
-        The primary function to initialize data visualization. This function
-        creates a 3x2 grid of subplots and populates them with data from
-        g04 and g05 datasets. Different subplot styles are used based on
-        the row in the grid.
-        """
 
         # Certification
         print("I certify that this program is my own work and not the work of others")
@@ -43,10 +36,7 @@ class Runner:
 
     @staticmethod
     def normalProbabilityDensity(x, mu=0, sigma=1.0):
-        """
-        This function calculates the probability density function for a normal distribution,
-        given a value (x), mean (mu), and standard deviation (sigma).
-        """
+
         exp = -((x - mu) ** 2) / (2 * sigma ** 2)
         numerator = np.exp(exp)
         denominator = sigma * np.sqrt(2 * np.pi)
@@ -69,11 +59,6 @@ class Runner:
                        capprops=None,
                        whiskerprops=None
                        ):
-        """
-        This function generates both a histogram and boxplot for the given data.
-        These plots are added to the provided axes in the specified row.
-        The function also allows for the customization of the boxplot's appearance.
-        """
 
         # Calculate mean and standard deviation of the data
         dataBar = mean(data)
@@ -144,7 +129,7 @@ class Runner:
                                      capprops=capprops,
                                      whiskerprops=whiskerprops
                                      )
-            axes[axesRow, 1].set_title('Box and Whisker Plot')
+            axes[axesRow, 1].set_title('Box & Whisker Plot')
             axes[axesRow, 1].set_xlabel('Haskins')
 
         # Compute the values for a normal probability density curve for the
