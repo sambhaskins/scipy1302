@@ -1,7 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from statistics import mean, stdev
-import math
 
 
 class Runner:
@@ -15,7 +14,7 @@ class Runner:
         fig, axes = plt.subplots(3, 2, figsize=(6, 5))
 
         # Process the first dataset
-        Runner.plotHistAndBox(g04, axes, axesRow=0)
+        Runner.plotHistAndBox(g04, axes, axesRow=0, showfliers=False)
 
         # Process the 'second' dataset
         Runner.plotHistAndBox(g04, axes, axesRow=1, showcaps=False)
@@ -57,12 +56,22 @@ class Runner:
         dataBar = mean(data)
         dataStd = stdev(data)
 
+        if axesRow == 0:
+            axes[axesRow, 0].set_xticks([50, 100])
+            axes[axesRow, 1].set_xticks([25, 50, 75])
+        elif axesRow == 1:
+            axes[axesRow, 0].set_xticks([50, 100])
+            axes[axesRow, 1].set_xticks([50, 100])
+        elif axesRow == 2:
+            axes[axesRow, 0].set_xticks([20, 40, 60, 80, 100])
+            axes[axesRow, 1].set_xticks([20, 40, 60, 80, 100])
+
         if multiDim == True:
             # Plot and label histogram
             dataN, dataBins, dataPat = axes[axesRow, 0].hist(
                 data, bins=136, density=True)
             axes[axesRow, 0].set_title('data')
-            axes[axesRow, 0].set_xlabel('Sam Haskins')
+            axes[axesRow, 0].set_xlabel('Sam')
             axes[axesRow, 0].set_ylabel('Relative Freq')
 
             # Plot a boxplot
@@ -83,14 +92,14 @@ class Runner:
                                      whiskerprops=whiskerprops
                                      )
             axes[axesRow, 1].set_title('Box & Whisker Plot')
-            axes[axesRow, 1].set_xlabel('Sam Haskins')
+            axes[axesRow, 1].set_xlabel('Haskins')
 
         else:
             # Plot and label histogram
             dataN, dataBins, dataPat = axes[axesRow, 0].hist(
                 data, bins=136, density=True, range=(min(data), max(data)))
             axes[axesRow, 0].set_title('data')
-            axes[axesRow, 0].set_xlabel('Sam Haskins')
+            axes[axesRow, 0].set_xlabel('Sam')
             axes[axesRow, 0].set_ylabel('Relative Freq')
 
             # Plot a boxplot
@@ -111,7 +120,7 @@ class Runner:
                                      whiskerprops=whiskerprops
                                      )
             axes[axesRow, 1].set_title('Box and Whisker Plot')
-            axes[axesRow, 1].set_xlabel('Sam Haskins')
+            axes[axesRow, 1].set_xlabel('Haskins')
 
         # Compute the values for a normal probability density curve for the
         # data mu and sigma across the same range of values.
