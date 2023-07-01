@@ -1,6 +1,6 @@
-#DO NOT MODIFY THE CODE IN THIS FILE
-#File: Proj10.py
-#Rev 03/30/23
+# DO NOT MODIFY THE CODE IN THIS FILE
+# File: Proj10.py
+# Rev 03/30/23
 '''
 This assignment requires you to write a program demonstrating 
 your knowledge of various aspects of box and whisker plots.
@@ -10,8 +10,9 @@ import random
 from statistics import mean
 from Proj10Runner import Runner
 
-#This is a utility function.
-def normalRandomGenerator(seed=1,dataLength=10000,numberSamples=50,lowLim=0,highLim=100):
+
+# This is a utility function.
+def normalRandomGenerator(seed=1, dataLength=10000, numberSamples=50, lowLim=0, highLim=100):
     '''
     Create a new dataset of dataLength values consisting of the average of numberSamples 
     samples taken from a population of uniformly distributed values between lowLim 
@@ -35,30 +36,28 @@ def normalRandomGenerator(seed=1,dataLength=10000,numberSamples=50,lowLim=0,high
     for cnt in range(dataLength):
         theSum = 0
         for cnt1 in range(numberSamples):
-            theSum += random.uniform(lowLim,highLim)
-        data.append(theSum/numberSamples)
-        
-    return data
-    #=====================================================================
+            theSum += random.uniform(lowLim, highLim)
+        data.append(theSum / numberSamples)
 
-#Create a dataset based on a random number generator that can be used to
+    return data
+    # =====================================================================
+
+
+# Create a dataset based on a random number generator that can be used to
 # illustrate Box & Whisker plots.
 g01 = normalRandomGenerator(dataLength=10000,
-                            numberSamples=3,lowLim=10,highLim=40,seed=1)
+                            numberSamples=3, lowLim=10, highLim=40, seed=1)
 g02 = normalRandomGenerator(dataLength=6000,
-                            numberSamples=2,lowLim=20,highLim=80,seed=2)
+                            numberSamples=2, lowLim=20, highLim=80, seed=2)
 g03 = normalRandomGenerator(dataLength=4000,
-                            numberSamples=1,lowLim=30,highLim=90,seed=3)
+                            numberSamples=1, lowLim=30, highLim=90, seed=3)
 g04 = g01 + g02 + g03 + [120]
 
-#Create another dataset that can be used to illustrates a Box & Whisker
+# Create another dataset that can be used to illustrates a Box & Whisker
 # plot with a notch.
-g05 = [110]+ normalRandomGenerator(dataLength=1000,
-                            numberSamples=1,lowLim=60,highLim=90,seed=1)
-#Call the student's run method passing the two datasets as parameters
-Runner.run(g04,g05)
+g05 = [110] + normalRandomGenerator(dataLength=1000,
+                                    numberSamples=1, lowLim=60, highLim=90, seed=1)
 
 
-
-
-
+# Call the student's run method passing the two datasets as parameters
+Runner.run(g04, g05)
