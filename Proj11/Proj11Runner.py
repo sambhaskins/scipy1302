@@ -1,9 +1,15 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from statistics import mean
-from statistics import median
 from statistics import stdev
 import math
+
+
+"""
+This program visualizes three sets of data across nine different subplots, using histograms, box & whisker plots,
+and violin plots. Customizations are applied to each subplot based on the data it represents, and according to 
+assignment specs.
+"""
 
 
 class Runner:
@@ -20,9 +26,9 @@ class Runner:
 
         # Call the histBoxAndViolin function to process the first dataset
         Runner.histBoxAndViolin(g01, axes, axesRow=0, multiDim=True,
-                                vFacecolor='green',  # violin facecolor
-                                vEdgecolor='orange',  # violin edgecolor
-                                vAlpha=0.5  # violin transparency
+                                vFacecolor='green',
+                                vEdgecolor='orange',
+                                vAlpha=0.5
                                 )
 
         # Process the second dataset
@@ -38,7 +44,7 @@ class Runner:
                                 vFacecolor='red',
                                 vEdgecolor='black',
                                 vAlpha=0.5,
-                                vMedianLineStyle='dotted'  # violin median line style
+                                vMedianLineStyle='dotted'
                                 )
 
         axes[0, 0].grid(True)
