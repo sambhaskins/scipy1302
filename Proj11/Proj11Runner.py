@@ -28,7 +28,7 @@ class Runner:
         # Process the second dataset
         Runner.histBoxAndViolin(g02, axes, axesRow=1, multiDim=True,
                                 vFacecolor='grey',
-                                vEdgecolor='grey',
+                                vEdgecolor='black',
                                 vMedianLineStyle='dashed',
                                 vAlpha=0.5
                                 )
