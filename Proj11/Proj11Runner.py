@@ -5,6 +5,7 @@ from statistics import median
 from statistics import stdev
 import math
 
+
 class Runner:
 
     @staticmethod
@@ -14,29 +15,31 @@ class Runner:
         print("I agree not to share my solution with others")
         print("Sam Beers Haskins")
 
-
         # Create a figure with three rows and three columns
         fig, axes = plt.subplots(3, 3, figsize=(6, 4), sharex=True)
 
         # Call the histBoxAndViolin function to process the first dataset
         Runner.histBoxAndViolin(g01, axes, axesRow=0, multiDim=True,
-                         vFacecolor='red',  # violin facecolor
-                         vEdgecolor='black',  # violin edgecolor
-                         vAlpha=0.5  # violin transparency
-                         )
+                                vFacecolor='green',  # violin facecolor
+                                vEdgecolor='orange',  # violin edgecolor
+                                vAlpha=0.5  # violin transparency
+                                )
 
         # Process the second dataset
         Runner.histBoxAndViolin(g02, axes, axesRow=1, multiDim=True,
-                         vAlpha=0.5
-                         )
+                                vFacecolor='grey',
+                                vEdgecolor='grey',
+                                vMedianLineStyle='dashed',
+                                vAlpha=0.5
+                                )
 
         # Process the third dataset
         Runner.histBoxAndViolin(g03, axes, axesRow=2, multiDim=True,
-                         vFacecolor='green',
-                         vEdgecolor='red',
-                         vAlpha=0.5,
-                         vMedianLineStyle='dotted'  # violin median line style
-                         )
+                                vFacecolor='red',
+                                vEdgecolor='black',
+                                vAlpha=0.5,
+                                vMedianLineStyle='dotted'  # violin median line style
+                                )
 
         axes[0, 0].grid(True)
         axes[0, 1].grid(True)
@@ -51,15 +54,13 @@ class Runner:
         plt.tight_layout()
         plt.show()
 
-
-
     @staticmethod
     def normalProbabilityDensity(x, mu=0, sigma=1.0):
-            eVal = 2.718281828459045
-            exp = -((x - mu) ** 2) / (2 * (sigma ** 2))
-            numerator = pow(eVal, exp)
-            denominator = sigma * (math.sqrt(2 * math.pi))
-            return numerator / denominator
+        eVal = 2.718281828459045
+        exp = -((x - mu) ** 2) / (2 * (sigma ** 2))
+        numerator = pow(eVal, exp)
+        denominator = sigma * (math.sqrt(2 * math.pi))
+        return numerator / denominator
 
     @staticmethod
     def histBoxAndViolin(data, axes, axesRow=0, multiDim=False,
@@ -101,7 +102,7 @@ class Runner:
         dataN, dataBins, dataPat = ax0.hist(
             data, bins=136, density=True, range=(min(data), max(data)))
         ax0.set_title('Histogram')
-        ax0.set_xlabel('x')
+        ax0.set_xlabel('Sam')
         ax0.set_ylabel('Relative Freq')
 
         # Compute the values for a normal probability density curve for the
@@ -131,8 +132,8 @@ class Runner:
                     capprops=capprops,
                     whiskerprops=whiskerprops
                     )
-        ax1.set_title('Box and Whisker Plot')
-        ax1.set_xlabel('x')
+        ax1.set_title('Box & Whisker Plot')
+        ax1.set_xlabel('Haskins')
 
         # Plot a violin plot
         parts = ax2.violinplot(data,
