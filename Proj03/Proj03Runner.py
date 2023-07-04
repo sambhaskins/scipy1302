@@ -83,7 +83,8 @@ def cumulative_distribution(x):
     x = abs(x) / np.sqrt(2.0)
 
     t = 1.0 / (1.0 + p * x)
-    y = 1.0 - (((((a5 * t + a4) * t) + a3) * t + a2) * t + a1) * t * np.exp(-x * x)
+    y = 1.0 - (((((a5 * t + a4) * t) + a3) * t + a2)
+               * t + a1) * t * np.exp(-x * x)
 
     return 0.5 * (1.0 + sign * y)
 
@@ -100,8 +101,10 @@ class Runner:
         """
         fig, ax = plt.subplots(2, 2)
 
-        x_data = normal_random_generator(seed=1, data_length=100, number_samples=1, low_lim=0, high_lim=200)
-        noise = normal_random_generator(seed=2, data_length=200, number_samples=1, low_lim=0, high_lim=10)
+        x_data = normal_random_generator(
+            seed=1, data_length=100, number_samples=1, low_lim=0, high_lim=200)
+        noise = normal_random_generator(
+            seed=2, data_length=200, number_samples=1, low_lim=0, high_lim=10)
 
         y_data = []
         for cnt in range(len(x_data)):
@@ -128,7 +131,7 @@ class Runner:
 
         # plot in the lower left quadrant, using positively skewed data
         data = other_data()
-        ax[1, 0].hist(data, bins=50)
+        ax[1, 0].hist(data, bins=50, density=True)
         ax[1, 0].grid(True)
 
         x = np.arange(-3, 3, 0.1)

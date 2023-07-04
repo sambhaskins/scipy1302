@@ -21,7 +21,7 @@ class Runner:
         print("Sam Beers Haskins")
 
         # Setup 2x2 subplots with specific dimensions and edge styles
-        fig,axes = plt.subplots(2,2, facecolor='0.75', linewidth=10, edgecolor='Green')
+        fig, axes = plt.subplots(2,2, facecolor='0.75', linewidth=10, edgecolor='Green')
         
         # Create a range of t values for the plots
         t = np.arange(-3.0, 3.0, 0.05)
@@ -68,6 +68,6 @@ class Runner:
         ax3.text(0.25, 3.5, '$y=0.5*x^2$')
         ax3.set_ylim(-4.5,4.5)
 
-        # Render plot & display my name in bottom left corner
+        # Render plot & display my name in bottom left corner, we won't be using tight layout this time around.
         plt.figtext(0.1,0.02,'Sam Beers Haskins')
         plt.show()

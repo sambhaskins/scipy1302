@@ -6,10 +6,11 @@ from matplotlib.ticker import FormatStrFormatter
 """
  We'll use and repurpose the normal_probability_function from the textbook. I changed the function to follow 
  the snake_case naming convention, out of personal preference. This function wil be used to calculate the normal
- probability density of our dataset(s). I have used np.linspace() to generate evenly spaced points to plot the 
- normal probability density line.Furthermore, I have set the `num` value to 1000, to generate more points, 
- hopefully creating more precision. I used `markevery` to plot the datapoints in respect to the required output
-   in Figure 2.
+ probability density of our dataset(s). 
+ 
+ I have used np.linspace() to generate evenly spaced points to plot the normal probability density line. Furthermore,
+ I have set the `num` value to 1000, to generate more points, hopefully creating more precision. I used `markevery` 
+ to plot the datapoints in respect to the required output in Figure 2.
 """
 
 
@@ -74,7 +75,7 @@ class Runner:
         ax[1, 0].legend([line], ['norm prob density'], loc='upper left')
         ax[1, 0].grid(True)
         ax[1, 0].set_title('Lower Left')
-        ax[1, 0].set_xlabel('x')
+        ax[1, 0].set_xlabel('X')
         ax[1, 0].set_ylabel('Relative Frequency')
 
         # Plot the fourth and final batch of data in the lower left quadrant
@@ -92,7 +93,7 @@ class Runner:
         ax[1, 1].legend([line], ['norm prob density'], loc='lower left')
         ax[1, 1].grid(True)
         ax[1, 1].set_title('Lower Right')
-        ax[1, 1].set_xlabel('x')
+        ax[1, 1].set_xlabel('X')
 
         # Display the number of bins across all histograms, subract one to account for the bin edges
         num_bins = len(bins) - 1
