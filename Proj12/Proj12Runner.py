@@ -25,12 +25,12 @@ class Runner:
         # Adding xticks
         ax.set_xticks([r + barWidth for r in range(len(test01))], names)
 
-        ax.set_xlabel('Player Name')
-        ax.set_ylabel('Player Scores')
-        ax.set_title('Player Score Comparison')
+        ax.set_xlabel('Student Name')
+        ax.set_ylabel('Student Scores')
+        ax.set_title('Sam Beers Haskins')
 
         ax.grid()
-        plt.legend(loc='lower left')
+        plt.legend(loc='upper right')
         plt.show()
 
 
