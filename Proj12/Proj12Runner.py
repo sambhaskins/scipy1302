@@ -9,13 +9,22 @@ class Runner:
         print("I agree not to share my solution with others")
         print("Sam Beers Haskins")
 
-        names = []
-        xPosition = range(1, 6)
+        # Width of a bar
+        barWidth = 0.2
+
+        # Set position of bar on X axis
+        r1 = np.arange(len(test01))
+        r2 = [x + barWidth for x in r1]
+        r3 = [x + barWidth for x in r2]
 
         fig, ax = plt.subplots(1, 1)
-        ax.bar(xPosition, test01, label="Test 1")
-        ax.bar(xPosition, test02, label="Test 2", tick_label=names)
-        ax.bar(xPosition, test03, label="Test 3")
+        ax.bar(r1, test01, width = barWidth, label="Test 1")
+        ax.bar(r2, test02, width = barWidth, label="Test 2")
+        ax.bar(r3, test03, width = barWidth, label="Test 3")
+
+        # Adding xticks
+        ax.set_xticks([r + barWidth for r in range(len(test01))], names)
+
         ax.set_xlabel('Player Name')
         ax.set_ylabel('Player Scores')
         ax.set_title('Player Score Comparison')
@@ -23,3 +32,5 @@ class Runner:
         ax.grid()
         plt.legend(loc='lower left')
         plt.show()
+
+
