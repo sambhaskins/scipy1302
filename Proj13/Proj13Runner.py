@@ -10,14 +10,11 @@ specs.
 
 class Runner:
     @staticmethod
-    def run(scores):
+    def run(tests, scores):
         # Certification
         print("I certify that this program is my own work and not the work of others")
         print("I agree not to share my solution with others")
         print("Sam Beers Haskins")
-
-        # Define the labels for each test
-        tests = 'Test 1', 'Test 2', 'Test 3', 'Test 4', 'Test 5', 'Test 6', 'Test 7'
 
         # Define which slices to "explode" for emphasis
         explodeSlices = (0, 0, 0, 0, 0.7, 0, 0.8)
