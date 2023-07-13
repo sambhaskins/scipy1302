@@ -30,11 +30,7 @@ class Runner:
         ax.pie(scores, explode=explodeSlices, labels=tests, autopct=percentages,
                shadow=True, startangle=90)
 
-        # Ensure that the pie chart is drawn as a circle (i.e., the aspect ratio is equal)
+        # Ensure that the pie chart is drawn as a circle, set title, and display
         ax.axis('equal')
-
-        # Set the title of the pie chart
         ax.set_title('Sam Beers Haskins')
-
-        # Display the pie chart
         plt.show()
