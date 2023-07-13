@@ -2,7 +2,9 @@ import matplotlib.pyplot as plt
 
 """
 This program visualizes a set of test scores using a pie chart. Each slice of the pie represents the score 
-for a particular test. Two of the tests are emphasized with "exploded" slices.
+on a particular test. Two of the tests are emphasized with "exploded" slices I've changed the radius, and
+how much the slices will "explode" in order to make the chart more presentable - and to adhere to assignment
+specs.
 """
 
 
@@ -18,7 +20,7 @@ class Runner:
         tests = 'Test 1', 'Test 2', 'Test 3', 'Test 4', 'Test 5', 'Test 6', 'Test 7'
 
         # Define which slices to "explode" for emphasis
-        explodeSlices = (0, 0, 0, 0, 0.7, 0, 0.7)
+        explodeSlices = (0, 0, 0, 0, 0.7, 0, 0.8)
 
         # Define the format for the percentage labels on each slice
         percentages = '%1.1f%%'
