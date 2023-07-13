@@ -18,7 +18,7 @@ class Runner:
         tests = 'Test 1', 'Test 2', 'Test 3', 'Test 4', 'Test 5', 'Test 6', 'Test 7'
 
         # Define which slices to "explode" for emphasis
-        explodeSlices = (0, 0, 0, 0, 0.3, 0, 0.3)
+        explodeSlices = (0, 0, 0, 0, 0.7, 0, 0.7)
 
         # Define the format for the percentage labels on each slice
         percentages = '%1.1f%%'
@@ -28,7 +28,7 @@ class Runner:
 
         # Create the pie chart
         ax.pie(scores, explode=explodeSlices, labels=tests, autopct=percentages,
-               shadow=True, startangle=90)
+               shadow=True, startangle=90, radius=2.0)
 
         # Ensure that the pie chart is drawn as a circle, set title, and display
         ax.axis('equal')
